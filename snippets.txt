@@ -1,0 +1,255 @@
+{
+	"React -- CreateDashboard: Base Component": {
+		"prefix": "RR",
+		"body": [
+			"import React, {useEffect} from 'react';",
+			"",
+			"",
+			"",
+			"const CeateDashboard = () => {",
+			"",
+			"",
+			"};",			
+			"",
+			"export default CeateDashboard;",
+		],
+		"description": "Reveal React -- CreateDashboard: Base Component"
+	},
+
+	"React -- CreateDashboard: <div> for Reveal View": {
+		"prefix": "RR",
+		"body": [
+			"return <div id='revealView' style={{ height: 'calc(100vh - 60px)', width: '100%' }}></div>;",			
+		],
+		"description": "Reveal React -- CreateDashboard: <div> for Reveal View"
+	},
+	
+
+	"React -- CreateDashboard: useEffect": {
+		"prefix": "RR",
+		"body": [
+			"useEffect(() => {",	
+			"",
+			"",
+			"}, [] );",		
+		],
+		"description": "Reveal React -- CreateDashboard: useEffect"
+	},
+
+	"React -- CreateDashboard: $ any": {
+		"prefix": "RR",
+		"body": [
+			"declare let $: any;",			
+		],
+		"description": "Reveal React -- CreateDashboard: $ any"
+	},
+	
+	"React -- CreateDashboard: var New RevealView": {
+		"prefix": "RR",
+		"body": [
+			"var revealView = new $.ig.RevealView('#revealView');",			
+		],
+		"description": "Reveal React -- CreateDashboard:  var New RevealView"
+	},
+	
+	"React -- CreateDashboard: startInEditMode = true": {
+		"prefix": "RR",
+		"body": [
+			"revealView.startInEditMode = true;",			
+		],
+		"description": "Reveal React -- CreateDashboard: startInEditMode = true"
+	},
+	
+	"React -- CreateDashboard: onDataSourcesRequested": {
+		"prefix": "RR",
+		"body": [
+			"revealView.onDataSourcesRequested = (callback: any) => {",			
+			"",
+			"",
+			"callback(new $.ig.RevealDataSources([], [], false));",
+			"};",
+		],
+		"description": "Reveal React -- CreateDashboard: onDataSourcesRequested"
+	},
+
+	"React -- CreateDashboard: Athena Full Database (DataSource)": {
+		"prefix": "RR",
+		"body": [
+			"// Athena Full Database",
+			"var athenaDS = new $.ig.RVAthenaDataSource();",
+			"athenaDS.id = 'athenaDSId';",
+			"athenaDS.title = 'Athena Data Source';",
+			"athenaDS.subtitle = '';",
+			"athenaDS.region = 'us-east-1';",
+			"athenaDS.database = 'mydatabase';",
+		],
+		"description": "Reveal React -- CreateDashboard: Athena Full Database (DataSource)"
+	},
+
+	"React -- CreateDashboard: Athena Tables (DataSourceItem)": {
+		"prefix": "RR",
+		"body": [
+			"// Athena Curated List of Tables / Views",
+			"var athenaDSItem = new $.ig.RVAthenaDataSourceItem(athenaDS);",
+			"athenaDSItem.id = 'Invoices';",
+			"athenaDSItem.title = 'Invoices';",
+			"athenaDSItem.subtitle = '';",
+			"",
+			"var athenaDSItem1 = new $.ig.RVAthenaDataSourceItem(athenaDS);",
+			"athenaDSItem1.id = 'Collisions';",
+			"athenaDSItem1.title = 'Collisions';",
+			"athenaDSItem1.subtitle = '';",
+		],
+		"description": "Reveal React -- CreateDashboard: Tables (DataSourceItem)"
+	},
+
+	"React -- SQL Server Full Database (DataSource)": {
+		"prefix": "RD",
+		"body": [
+			"// SQL Server Full Database",
+			"let sqlServerDataSource = new $.ig.RVSqlServerDataSource();",
+			"sqlServerDataSource.id='sqlServer';",
+			"sqlServerDataSource.host = 's0106linuxsql1.infragistics.local';",
+			"sqlServerDataSource.title = 'SQL Server Data Source';",
+			"sqlServerDataSource.subtitle = 'Full Northwind Database';",
+		],
+		"description": "Reveal React -- SQL Server Full Database (DataSource)"
+	},
+
+	"React -- SQL Server Curated Items (DataSourceItems)": {
+		"prefix": "RD",
+		"body": [
+			"// SQL Server Curated Items",
+			"let sqlDataSourceItem1 = new $.ig.RVSqlServerDataSourceItem(sqlServerDataSource);",
+			"sqlDataSourceItem1.id='CustomerOrders';",
+			"sqlDataSourceItem1.title = 'Customer Orders';",
+			"sqlDataSourceItem1.subtitle = 'Custom SQL Query';",
+			"",
+			"let sqlDataSourceItem2 = new $.ig.RVSqlServerDataSourceItem(sqlServerDataSource);",
+			"sqlDataSourceItem2.id='CustOrderHist';",
+			"sqlDataSourceItem2.title = 'Customer Orders History';",
+			"sqlDataSourceItem2.subtitle = 'Stored Procedure';",
+			"",
+			"let sqlDataSourceItem3 = new $.ig.RVSqlServerDataSourceItem(sqlServerDataSource);",
+			"sqlDataSourceItem3.id='CustOrdersOrders';",
+			"sqlDataSourceItem3.title = 'Customer Orders Orders';",
+			"sqlDataSourceItem3.subtitle = 'Stored Procedure';",
+			"",
+			"let sqlDataSourceItem4 = new $.ig.RVSqlServerDataSourceItem(sqlServerDataSource);",
+			"sqlDataSourceItem4.id='TenMostExpensiveProducts';",
+			"sqlDataSourceItem4.title = 'Ten Most Expensive Products';",
+			"sqlDataSourceItem4.subtitle = 'Stored Procedure';",
+			"",
+		],
+		"description": "Reveal React -- SQL Server Curated Items (DataSourceItems)"
+	},
+
+	"React -- App.tsx: Imports": {
+		"prefix": "RR",
+		"body": [
+			"import {Route,Routes} from 'react-router-dom';",
+			"import 'bootstrap/dist/css/bootstrap.min.css';",
+			"import CreateDashboard from './components/CreateDashboard';",			
+		],
+		"description": "Reveal React -- App.tsx: Imports"
+	},
+
+	"React -- App.tsx: div for Routes": {
+		"prefix": "RR",
+		"body": [
+			"<div className='border' >",
+			"{/* <Header /> */}",
+			"<Routes>",
+			"  <Route path='/create' Component={CreateDashboard}/>",
+			"  {/* <Route path='/view' Component={ViewDashboard}/>",
+			"  <Route path='/' Component={ViewDashboard}/> */}",
+			"</Routes>",
+			"</div>",
+		],
+		"description": "Reveal React -- App.tsx: div for Routes"
+	},
+
+	"React -- ViewDashboard: Base Component": {
+		"prefix": "RV",
+		"body": [
+			"import React, {useEffect, useState} from 'react';",
+			"",
+			"declare let $: any;",
+			"const apiURL = 'http://localhost:56565/dashboards';",
+			"",
+			"const ViewDashboard = (props: any) => {",
+			"",
+			"",
+			"};",			
+			"",
+			"export default ViewDashboard;",
+		],
+		"description": "Reveal React -- ViewDashboard: Base Component"
+	},
+
+	"React -- ViewDashboard: const dashboardId, setDashboard": {
+		"prefix": "RV",
+		"body": [
+			"const [dashboardId, setDashboardId] = useState('Campaigns');",
+			"const [dashboards, setDashboards] = useState([]);",
+			"",
+			"let changeDashboard = (e: any) => {",
+			"   setDashboardId(e.target.value);",
+			"};",
+			"",
+		],
+		"description": "Reveal React -- ViewDashboard: const dashboardId, setDashboard"
+	},
+
+	"React -- ViewDashboard: useEffect - Get Dashboards List": {
+		"prefix": "RV",
+		"body": [
+			"useEffect(() => {  ",
+			"  fetch(apiURL, { method: 'GET' }).then((res: any) => res.json())",
+			"  .then((dashboards:any)=>{",
+			"    setDashboards(dashboards);",,
+			"  });",
+			"}, []);",
+		],
+		"description": "Reveal React -- ViewDashboard: useEffect - Get Dashboards List"
+	},
+
+	"React -- ViewDashboard: useEffect - Load Dashboard in RevealView": {
+		"prefix": "RV",
+		"body": [
+			"useEffect(() => {  ",
+			"  $.ig.RVDashboard.loadDashboard(dashboardId).then((dashboard: any) => {",
+			"    var revealView = new $.ig.RevealView('#revealView');",
+			"    revealView.dashboard = dashboard;",
+			"  });",
+			"}, [dashboardId]);",
+		],
+		"description": "Reveal React -- useEffect - Load Dashboard in RevealView"
+	},
+
+	"React -- ViewDashboard: return - HTML to Render Dashboard": {
+		"prefix": "RV",
+		"body": [
+			"return (",
+			"<div>",
+			"<div>",
+			"<h3>Load Dashboard</h3>",
+			"<select name='dashboards' id='dashboards-select' value={dashboardId} onChange={changeDashboard}>",
+			"{",
+			"dashboards.map((dashboard: any, index: number) => {",
+			"return (",
+			"<option key={index} value={dashboard.name}>{dashboard.name}</option>",
+			");",
+			"})",
+			"}",
+			"</select>",
+			"</div>",
+			"<div id='revealView' style={{ height: 'calc(100vh - 130px)', width: '100%' }}></div>",
+			"</div>",
+			");",
+		],
+		"description": "Reveal React -- return - HTML to Render Dashboard"
+	},
+
+}
+
